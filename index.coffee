@@ -1,4 +1,6 @@
-EventEmitter = require 'eventemitter2'
+ee2 = require('eventemitter2')
+EventEmitter = ee2?.EventEmitter2 ? ee2
+
 globalEmitter = new EventEmitter wildcard: true, delimitter: ':'
 module.exports =
   emit: -> @getContextEmitter().emit arguments...
