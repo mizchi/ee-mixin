@@ -5,7 +5,8 @@
   EventEmitter = require('eventemitter2');
 
   globalEmitter = new EventEmitter({
-    wildcard: true
+    wildcard: true,
+    delimitter: ':'
   });
 
   module.exports = {
