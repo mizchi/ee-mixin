@@ -31,7 +31,7 @@ ee = new EventEmitter
 # else create internal eventemitter and can give it to child 
 c = React.render MyComponent(emitter: ee), document.body
 
-c.getEventEmitter() is ee #=> true in this context.given EventEmitter or global EventEmitter
+c.getContextEmitter() is ee #=> true in this context.given EventEmitter or global EventEmitter
 
 ee.on 'clicked', ->
   console.log 'receive clicked event'
