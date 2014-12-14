@@ -1,9 +1,9 @@
-# React EventEmitter
+# ee-mixin - React EventEmitter Mixin
 
 EventEmitter mixin for react
 
 ```
-npm install mizchi/react-event-emitter
+$ npm install mizchi/ee-mixin --save
 ```
 
 ## Rules
@@ -14,7 +14,7 @@ npm install mizchi/react-event-emitter
 ## Example
 
 ```coffee
-EventEmitterMixin = requrie 'react-event-emitter'
+EventEmitterMixin = requrie 'ee-mixin'
 
 MyComponent = React.createClass
   mixins: [EventEmitterMixin()]
