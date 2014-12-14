@@ -1,8 +1,9 @@
-EventEmitter = require 'event-emitter'
-module.exports = EventEmitterMixin = ->
-  localEvents = new EventEmitter
+EventEmitter = require 'eventemitter2'
+globalEmitter = new EventEmitter wildcard: true
+module.exports = ->
   emit: -> @getEventEmitter().emit arguments...
   on:   -> @getEventEmitter().on arguments...
   once: -> @getEventEmitter().once arguments...
   off:  -> @getEventEmitter().off arguments...
-  getEventEmitter: -> @props.events ? localEvents
+  getEmitter: -> @props.emitter ? globalEmitter
+  getGlobalEmitter: -> globalEmitter
