@@ -11,21 +11,21 @@
   module.exports = {
     emit: function() {
       var _ref;
-      return (_ref = this.getEventEmitter()).emit.apply(_ref, arguments);
+      return (_ref = this.getContextEmitter()).emit.apply(_ref, arguments);
     },
     on: function() {
       var _ref;
-      return (_ref = this.getEventEmitter()).on.apply(_ref, arguments);
+      return (_ref = this.getContextEmitter()).on.apply(_ref, arguments);
     },
     once: function() {
       var _ref;
-      return (_ref = this.getEventEmitter()).once.apply(_ref, arguments);
+      return (_ref = this.getContextEmitter()).once.apply(_ref, arguments);
     },
     off: function() {
       var _ref;
-      return (_ref = this.getEventEmitter()).off.apply(_ref, arguments);
+      return (_ref = this.getContextEmitter()).off.apply(_ref, arguments);
     },
-    getEmitter: function() {
+    getContextEmitter: function() {
       var _ref;
       return (_ref = this.props.emitter) != null ? _ref : globalEmitter;
     },
