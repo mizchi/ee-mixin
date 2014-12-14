@@ -14,24 +14,24 @@ $ npm install mizchi/ee-mixin --save
 ## Example
 
 ```coffee
-EventEmitterMixin = requrie 'ee-mixin'
+eeMixin = requrie 'ee-mixin'
 
 MyComponent = React.createClass
-  mixins: [EventEmitterMixin()]
+  mixins: [eeMixin]
 	onClick: ->
 		@emit 'clicked'
 
   render: ->
 		React.createElement 'button', {onClick: @onClick}, 'onClick'
 
-EventEmitter = require 'event-emitter'
+{EventEmitter} = require 'events'
 ee = new EventEmitter
 
 # if you give events as EventEmitter, use it in component
 # else create internal eventemitter and can give it to child 
-c = React.render MyComponent(events: ee), document.body
+c = React.render MyComponent(emitter: ee), document.body
 
-c.getEventEmitter() is ee #=> true in this context. local EventEmitter or given EventEmitter
+c.getEventEmitter() is ee #=> true in this context.given EventEmitter or global EventEmitter
 
 ee.on 'clicked', ->
   console.log 'receive clicked event'
